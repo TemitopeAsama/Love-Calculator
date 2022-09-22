@@ -21,7 +21,7 @@ export const HeaderStyles = styled.header`
 			color: var(--logo-pink);
 
 			span:hover {
-				background: var(--text-gradient);
+				background: var(--gradient);
 				background-clip: text;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
