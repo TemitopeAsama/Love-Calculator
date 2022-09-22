@@ -12,6 +12,11 @@ export const PaginationStyles = styled.nav`
 			margin-left: 1rem;
 		}
 
+		.page-link.is-active {
+			color: var(--logo-pink);
+            font-weight: 700;
+		}
+
 		/* .previous button, .next button {
 				padding: var(--s-2) var(--s0);
 				background-color: transparent;
@@ -21,8 +26,9 @@ export const PaginationStyles = styled.nav`
 		button {
 			padding: var(--s-2) var(--s0);
 			background-color: transparent;
-			color: var(--logo-pink);
-            font-family: "Satoshi", sans-serif;
+			color: black;
+			font-family: "Satoshi", sans-serif;
+			font-weight: 500;
 		}
 	}
 `;

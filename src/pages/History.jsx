@@ -1,18 +1,27 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Pagination from '../utils/Pagination';
-import { HistoryStyles } from '../styles/HistoryStyles';
-import { NoHistoryStyles } from '../styles/HistoryStyles';
-import Search from '../components/Search';
-import Sort from '../components/Sort';
+import Pagination from "../components/Pagination";
+import { HistoryStyles } from "../styles/HistoryStyles";
+import { NoHistoryStyles } from "../styles/HistoryStyles";
+import Search from "../components/Search";
+import Sort from "../components/Sort";
+import { calculationsList, filteredCalculations } from "../utils/history";
 
 const History = () => {
 	const [searchEntry, setSearchEntry] = useState("");
+	const [sortOrder, setSortOrder] = useState("");
 	const [sortedEntries, setSortedEntries] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1); // current page
 	const [entriesPerPage] = useState(5); // no of entries per page
-	const calculations = JSON.parse(localStorage.getItem("calculations")); // get calculations from local storage
-	if (calculations === null) {
+
+	useEffect(() => {
+		const calculations = JSON.parse(localStorage.getItem("calculations")) ??[]; // get calculations from local storage
+		// convert calculations object to array
+		const calculationsArray = calculationsList(calculations);
+		setSortedEntries(calculationsArray)
+	}, [])
+
+	if (sortedEntries.length === 0) {
 		// if no calculations, return empty div
 		return (
 			<NoHistoryStyles>
@@ -22,49 +31,19 @@ const History = () => {
 		);
 	}
 
-	// convert calculations object to array
-	const calculationsList = Object.entries(calculations).map(([key, value]) => {
-		const [firstName, secondName] = key.split("|");
-		const capitalizedFirstName =
-			firstName.charAt(0).toUpperCase() + firstName.slice(1);
-		const capitalizedSecondName =
-			secondName.charAt(0).toUpperCase() + secondName.slice(1);
-		return {
-			capitalizedFirstName,
-			capitalizedSecondName,
-			score: value.score,
-			message: value.message,
-			key: key,
-		};
-	});
-
-	// Sort entries
+	// setSortedEntries(calculationsArray);
 	const handleSort = (sortEntry) => {
+		setSortOrder(sortEntry);
 		if (sortEntry === "Newest To Oldest") {
-			const sortedEntries = filteredCalculations.sort((a, b) =>
-				a > b ? 1 : -1
-			);
-			setSortedEntries(sortedEntries);
+			const sortedResults = sortedEntries.sort((a, b) => (a < b ? 1 : -1));
+			setSortedEntries(sortedResults)
 		} else {
-			setSortedEntries(calculationsList);
+		const sortedResults = sortedEntries.sort((a, b) => (a > b ? 1 : -1));
+			setSortedEntries(sortedResults);
 		}
-	};
+	}
 
-	// TODO: Show message when searchTerm does not match any entry
-	const filteredCalculations = sortedEntries.filter((val) => {
-		if (searchEntry === "") {
-			return val;
-		} else if (
-			val.capitalizedFirstName
-				.toLowerCase()
-				.includes(searchEntry.toLowerCase()) ||
-			val.capitalizedSecondName
-				.toLowerCase()
-				.includes(searchEntry.toLowerCase())
-		) {
-			return val;
-		}
-	});
+	const filteredResults = filteredCalculations(sortedEntries, searchEntry);
 
 	// Get current batch of entries
 	const indexOfLastEntry = currentPage * entriesPerPage; // index of last entry in a batch
@@ -72,21 +51,24 @@ const History = () => {
 	const pageNumbers = []; //array to store page numbers
 	for (
 		let i = 1;
-		i <= Math.ceil(filteredCalculations.length / entriesPerPage);
+		i <= Math.ceil(filteredResults.length / entriesPerPage);
 		i++
 	) {
 		pageNumbers.push(i);
 	}
-	const currentEntries = filteredCalculations.slice(
+	const currentEntries = filteredResults.slice(
 		indexOfFirstEntry,
 		indexOfLastEntry
 	);
 
+
 	return (
 		<HistoryStyles>
-			<Link to='/'>Back</Link>
-			<Search setSearchEntry={setSearchEntry} />
-			<Sort handleSort={handleSort} />
+			<Link to='/'> &#8592; Back</Link>
+			<div className='search__sort'>
+				<Search setSearchEntry={setSearchEntry} />
+				<Sort handleSort={handleSort} />
+			</div>
 			<>
 				{currentEntries.map((calc) => {
 					return (
@@ -112,6 +94,6 @@ const History = () => {
 			)}
 		</HistoryStyles>
 	);
-}
+};
 
-export default History
+export default History;

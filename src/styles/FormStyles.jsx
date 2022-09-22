@@ -26,18 +26,6 @@ export const FormStyles = styled.div`
                     margin-bottom: var(--s-1);
                     font-weight: 500;
 				}
-
-				input {
-					width: 400px;
-					border: 1px solid var(--border-orange);
-					border-radius: 7px;
-					padding: var(--s0) var(--s1);
-
-
-                    &:focus {
-                        outline: 2px solid var(--logo-pink);
-                    }
-				}
 			}
 		}
 

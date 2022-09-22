@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 
 export const HistoryStyles = styled.div`
-    height: calc(100vh - 5.25rem);
-	padding: var(--s0) var(--s1);
+	height: calc(100vh - 5.25rem);
+	padding: 0 var(--s1) var(--s0);
 
+	a {
+		color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Satoshi", sans-serif;
+        font-weight: 500;
+	}
 
-    a {
-        color: red;
-    }
+	.search__sort {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
 
 	.entry__card {
 		padding: var(--s1) var(--s2);
@@ -23,7 +33,7 @@ export const HistoryStyles = styled.div`
 
 		.message {
 			font-size: var(--s0);
-            font-family: 'Satoshi', sans-serif;
+			font-family: "Satoshi", sans-serif;
 		}
 	}
 `;

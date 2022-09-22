@@ -1,13 +1,11 @@
-import React, {useState} from 'react'
 import { PaginationStyles } from '../styles/PaginationStyles';
 // import { PaginationButtonStyles } from '../styles/PaginationStyles';
 
 const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
-	// const [activePage, setActivePage] = useState(false);
-
 	// A function that facilitates navigation to the active page
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+	// A function that facilitates navigation to the previous page
 	const handlePrev = () => {
 		if (currentPage <= 1) {
 			return;
@@ -15,9 +13,12 @@ const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
 			paginate(currentPage - 1);
 		}
 	};
+	// A function that handles pagination with number**
 	const handleActivePage = (pageNumber) => {
 		paginate(pageNumber);
 	};
+
+	// A function that facilitates navigation to the next page
 	const handleNext = () => {
 		if (currentPage < pageNumbers.length) {
 			paginate(currentPage + 1);
@@ -25,7 +26,6 @@ const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
 	};
 
 	// TODO: Show active page with styles
-
 
 
 	return (
@@ -39,7 +39,7 @@ const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
 						<button
 							onClick={() => handleActivePage(pageNumber)}
 							role='link'
-							className='page-link'
+							className={pageNumber === currentPage ?  'page-link is-active':'page-link'}
 						>
 							{pageNumber}
 						</button>

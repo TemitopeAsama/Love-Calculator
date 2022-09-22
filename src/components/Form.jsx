@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { FormStyles } from '../styles/FormStyles';
 import Result from '../components/Result';
+import { InputStyles } from '../styles/InputStyles';
 
-const Form = ({firstName, setFirstName, secondName, setSecondName}) => {
+const Form = () => {
+    const [firstName, setFirstName] = useState("");
+		const [secondName, setSecondName] = useState("");
     const [pastCalculations, setPastCalculations] = useState(JSON.parse(localStorage.getItem("calculations")) || {});
     const [fetchState, setFetchState] = useState({
 			status: "idle",
@@ -76,7 +79,7 @@ const Form = ({firstName, setFirstName, secondName, setSecondName}) => {
 				<div className='inputs'>
 					<div className='input__label'>
 						<label htmlFor='f-name'>First Name</label>
-						<input
+						<InputStyles
 							type='text'
 							name='f-name'
 							id='f-name'
@@ -86,7 +89,7 @@ const Form = ({firstName, setFirstName, secondName, setSecondName}) => {
 					</div>
 					<div className='input__label'>
 						<label htmlFor='s-name'>Second Name</label>
-						<input
+						<InputStyles
 							type='text'
 							name='f-name'
 							id='s-name'

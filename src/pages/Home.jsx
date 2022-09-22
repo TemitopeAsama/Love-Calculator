@@ -2,12 +2,7 @@ import React from 'react'
 import Form from '../components/Form'
 import { HomeStyles } from '../styles/HomeStyles';
 
-const Home = ({
-	firstName,
-	setFirstName,
-	secondName,
-	setSecondName,
-}) => {
+const Home = () => {
 	return (
 		<HomeStyles>
 			<div className='copy'>
@@ -17,12 +12,7 @@ const Home = ({
 				<h1>Love Calculator</h1>
 			</div>
 
-			<Form
-				firstName={firstName}
-				secondName={secondName}
-				setFirstName={setFirstName}
-				setSecondName={setSecondName}
-			/>
+			<Form />
 		</HomeStyles>
 	);
 };

@@ -27,23 +27,8 @@ export const GlobalStyles = createGlobalStyle`
             hsl(54deg 97% 52%) 100%
     );
 
-    --text-gradient: linear-gradient(
-            145deg,
-            hsl(0deg 91% 54%) 0%,
-            hsl(355deg 89% 52%) 8%,
-            hsl(351deg 86% 51%) 17%,
-            hsl(348deg 84% 50%) 25%,
-            hsl(354deg 86% 55%) 33%,
-            hsl(359deg 91% 60%) 42%,
-            hsl(4deg 96% 61%) 50%,
-            hsl(14deg 98% 60%) 58%,
-            hsl(22deg 98% 59%) 67%,
-            hsl(29deg 96% 59%) 75%,
-            hsl(37deg 100% 57%) 83%,
-            hsl(46deg 100% 54%) 92%,
-            hsl(54deg 97% 52%) 100%
-    );
-
+	/* ICONS */
+	--icon: url("/arrow-icon-dark.png");
 
 	/* MODULAR SCALE */
 	--ratio: 1.5;
