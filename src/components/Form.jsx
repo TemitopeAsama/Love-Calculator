@@ -101,18 +101,17 @@ const Form = () => {
 				<div className='submit'>
 					<button type='submit'>Calculate</button>
 				</div>
-
-				{fetchState.status === "failure" && (
-					<span>
-						<img alt='warning' src='/error-icon.svg' />
-						<p>
-							{" "}
-							Whoa whoa whoa! Make sure none of the fields are empty, loverboy!
-						</p>
-					</span>
-				)}
-				{fetchState.status === "success" && <Result fetchState={fetchState} />}
 			</form>
+			{fetchState.status === "failure" && (
+				<span>
+					<img alt='warning' src='/error-icon.svg' />
+					<p>
+						{" "}
+						Whoa whoa whoa! Make sure none of the fields are empty, loverboy!
+					</p>
+				</span>
+			)}
+			{fetchState.status === "success" && <Result fetchState={fetchState} />}
 		</FormStyles>
 	);
 }

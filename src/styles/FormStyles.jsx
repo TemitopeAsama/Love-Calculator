@@ -10,12 +10,13 @@ export const FormStyles = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: var(--s3) var(--s3);
+		padding: var(--s1) var(--s2);
 
 		.inputs {
 			width: 100%;
 			display: flex;
 			justify-content: space-around;
+			flex-wrap: wrap;
 
 			.input__label {
 				display: flex;

@@ -2,31 +2,26 @@ import styled from 'styled-components';
 
 export const HeaderStyles = styled.header`
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--s1) var(--s3);
+	padding: 0 max(var(--s0), 5vw);
 	height: 5.25rem;
 	width: 100%;
 
+	h2 {
+		font-size: clamp(1rem, 1rem + 1vw, var(--s1));
+		font-weight: 900;
+		font-family: "Clash Grotesk", sans-serif;
+		color: var(--logo-pink);
 
-		img {
-			width: var(--s5);
-			margin-right: var(--s-3);
+		span:hover {
+			background: var(--gradient);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
-
-		h2 {
-			font-size: var(--s1);
-			font-weight: 900;
-			font-family: "Clash Grotesk", sans-serif;
-			color: var(--logo-pink);
-
-			span:hover {
-				background: var(--gradient);
-				background-clip: text;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-		}
+	}
 
 	a {
 		text-decoration: none;
