@@ -100,7 +100,8 @@ const Form = () => {
 				<div className='submit'>
 					<button type='submit'>Calculate</button>
 				</div>
-
+			</form>
+			<div>
 				{fetchState.status === "failure" && (
 					<span>
 						<img alt='warning' src='/error-icon.svg' />
@@ -111,7 +112,7 @@ const Form = () => {
 					</span>
 				)}
 				{fetchState.status === "success" && <Result fetchState={fetchState} />}
-			</form>
+			</div>
 		</FormStyles>
 	);
 }
