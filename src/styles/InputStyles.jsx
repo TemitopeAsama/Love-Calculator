@@ -18,6 +18,7 @@ export const DropdownStyles = styled(InputStyles)`
 	flex-basis: calc((20rem - 100%) * 999);
 	width: unset;
 	padding: var(--s-1) var(--s3) var(--s-1) var(--s1);
+	background-color: white;
 	background-image: var(--icon);
 	background-repeat: no-repeat;
 	background-size: calc(0.6rem + 0.25vw);
