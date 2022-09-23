@@ -17,6 +17,7 @@ export const FormStyles = styled.div`
 			display: flex;
 			justify-content: space-around;
 			flex-wrap: wrap;
+			gap: var(--s1);
 
 			.input__label {
 				display: flex;
