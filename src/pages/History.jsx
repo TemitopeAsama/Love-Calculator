@@ -34,7 +34,7 @@ const History = () => {
 	// sort results in different orders depending on selected option
 	const handleSort = (sortEntry) => {
 		setSortOrder(sortEntry);
-		if (sortEntry === "Oldest To Newest") {
+		if (sortEntry === "Newest To Oldest") {
 			const sortedResults = sortedEntries.sort((a, b) => (a > b ? 1 : -1));
 			setSortedEntries(sortedResults)
 		} else {
