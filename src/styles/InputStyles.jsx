@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const InputStyles = styled.input`
-		width: 350px;
+		width: 21.875rem;
 		border: 1px solid var(--border-orange);
 		border-radius: 7px;
 		padding: var(--s0) var(--s1);
@@ -14,8 +14,6 @@ export const InputStyles = styled.input`
 `;
 
 export const DropdownStyles = styled(InputStyles)`
-	flex-grow: 1;
-	flex-basis: calc((20rem - 100%) * 999);
 	width: unset;
 	padding: var(--s-1) var(--s3) var(--s-1) var(--s1);
 	background-color: white;
@@ -30,8 +28,6 @@ export const DropdownStyles = styled(InputStyles)`
 `;
 
 export const SearchStyles = styled(InputStyles)`
-	flex-grow: 1;
-	flex-basis: calc((20rem - 100%) * 999);
 	width: unset;
 	padding: var(--s-1) var(--s1) var(--s-1) var(--s0);
 `;

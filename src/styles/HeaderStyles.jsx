@@ -27,6 +27,6 @@ export const HeaderStyles = styled.header`
 		text-decoration: none;
 		font-family: "Satoshi", sans-serif;
 		font-weight: 500;
-		color: var(--heading-pink);
+		color: var(--logo-pink);
 	}
 `;

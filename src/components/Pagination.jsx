@@ -24,8 +24,6 @@ const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
 		}
 	};
 
-	// TODO: Show active page with styles
-
 
 	return (
 		<PaginationStyles>
@@ -52,4 +50,4 @@ const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
 	);
 }
 
-export default Pagination
+export default Pagination;

@@ -44,7 +44,6 @@ const Form = () => {
                             });
                             localStorage.setItem("calculations", JSON.stringify(newCalculation));
                     } catch (err) {
-                        console.log(err)
                             setFetchState({
                                 status: "failure",
                                 data: null,

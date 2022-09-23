@@ -14,15 +14,15 @@ const History = () => {
 	const [currentPage, setCurrentPage] = useState(1); // current page
 	const [entriesPerPage] = useState(5); // no of entries per page
 
+	// convert calculations object to array
 	useEffect(() => {
-		// convert calculations object to array
 		const calculations = JSON.parse(localStorage.getItem("calculations")) ??[]; // get calculations from local storage
 		const calculationsArray = calculationsList(calculations);
 		setSortedEntries(calculationsArray)
 	}, [])
 
+	// if no entry, return empty div with feedback
 	if (sortedEntries.length === 0) {
-		// if no calculations, return empty div
 		return (
 			<NoHistoryStyles>
 				<Link to='/'>Back</Link>
@@ -43,6 +43,7 @@ const History = () => {
 		}
 	}
 
+	// filter results based on search entry
 	const filteredResults = filteredCalculations(sortedEntries, searchEntry);
 
 	// Get current batch of entries
