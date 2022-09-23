@@ -1,26 +1,32 @@
 import styled from 'styled-components';
 
 export const HistoryStyles = styled.div`
-	height: calc(100vh - 5.25rem);
-	padding: 0 var(--s1) var(--s0);
+	/* max-height: ; */
+	height: min(100%, calc(100vh - 5.25rem));
+	padding: 0 var(--s1) var(--s1);
+
 
 	a {
 		color: red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Satoshi", sans-serif;
-        font-weight: 500;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: "Satoshi", sans-serif;
+		font-weight: 500;
 	}
 
 	.search__sort {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
+		align-content: center;
+		border: 2px solid red;
+		margin-top: var(--s-1);
 	}
 
 	.entry__card {
-		padding: var(--s1) var(--s2);
+		padding: var(--s1) var(--s0);
 		border-bottom: 2px solid red;
 
 		.names__score {

@@ -14,8 +14,10 @@ export const InputStyles = styled.input`
 `;
 
 export const DropdownStyles = styled(InputStyles)`
-    width: unset;
-	padding: var(--s-1) var(--s3) var(--s-1) var(--s0);
+	flex-grow: 1;
+	flex-basis: calc((20rem - 100%) * 999);
+	width: unset;
+	padding: var(--s-1) var(--s3) var(--s-1) var(--s1);
 	background-image: var(--icon);
 	background-repeat: no-repeat;
 	background-size: calc(0.6rem + 0.25vw);
@@ -27,6 +29,8 @@ export const DropdownStyles = styled(InputStyles)`
 `;
 
 export const SearchStyles = styled(InputStyles)`
+	flex-grow: 1;
+	flex-basis: calc((20rem - 100%) * 999);
 	width: unset;
-    padding: var(--s-1) var(--s1) var(--s-1) var(--s0);
+	padding: var(--s-1) var(--s1) var(--s-1) var(--s0);
 `;

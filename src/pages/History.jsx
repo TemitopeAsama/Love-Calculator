@@ -15,8 +15,8 @@ const History = () => {
 	const [entriesPerPage] = useState(5); // no of entries per page
 
 	useEffect(() => {
-		const calculations = JSON.parse(localStorage.getItem("calculations")) ??[]; // get calculations from local storage
 		// convert calculations object to array
+		const calculations = JSON.parse(localStorage.getItem("calculations")) ??[]; // get calculations from local storage
 		const calculationsArray = calculationsList(calculations);
 		setSortedEntries(calculationsArray)
 	}, [])
@@ -31,7 +31,7 @@ const History = () => {
 		);
 	}
 
-	// setSortedEntries(calculationsArray);
+	// sort results in different orders depending on selected option
 	const handleSort = (sortEntry) => {
 		setSortOrder(sortEntry);
 		if (sortEntry === "Newest To Oldest") {

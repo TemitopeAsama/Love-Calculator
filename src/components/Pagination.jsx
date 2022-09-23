@@ -1,5 +1,4 @@
 import { PaginationStyles } from '../styles/PaginationStyles';
-// import { PaginationButtonStyles } from '../styles/PaginationStyles';
 
 const Pagination = ({pageNumbers, currentPage, setCurrentPage}) => {
 	// A function that facilitates navigation to the active page
