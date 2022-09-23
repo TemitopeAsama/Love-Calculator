@@ -11,8 +11,8 @@ const Sort = ({ handleSort }) => {
 				id='sort-entries'
 				onChange={(e) => handleSort(e.target.value)}
 			>
-				<option value='Newest To Oldest'>Newest To Oldest</option>
 				<option value='Oldest To Newest'>Oldest To Newest</option>
+				<option value='Newest To Oldest'>Newest To Oldest</option>
 			</DropdownStyles>
 		</div>
 	);
