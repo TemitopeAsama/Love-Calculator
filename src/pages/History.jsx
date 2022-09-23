@@ -35,10 +35,10 @@ const History = () => {
 	const handleSort = (sortEntry) => {
 		setSortOrder(sortEntry);
 		if (sortEntry === "Oldest To Newest") {
-			const sortedResults = sortedEntries.sort((a, b) => (a < b ? 1 : -1));
+			const sortedResults = sortedEntries.sort((a, b) => (a > b ? 1 : -1));
 			setSortedEntries(sortedResults)
 		} else {
-		const sortedResults = sortedEntries.sort((a, b) => (a > b ? 1 : -1));
+		const sortedResults = sortedEntries.sort((a, b) => (a < b ? 1 : -1));
 			setSortedEntries(sortedResults);
 		}
 	}
