@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const HistoryStyles = styled.div`
-	/* max-height: ; */
 	height: min(100%, calc(100vh - 5.25rem));
 	padding: 0 var(--s1) var(--s1);
 
@@ -21,7 +20,6 @@ export const HistoryStyles = styled.div`
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-content: center;
-		border: 2px solid red;
 		margin-top: var(--s-1);
 	}
 
